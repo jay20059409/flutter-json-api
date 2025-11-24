@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
+from flask_cors import CORS   # <-- 新增這行
 
 app = Flask(__name__)
+CORS(app)  # <-- 新增這行，允許所有網域存取
 
 @app.route("/data", methods=["GET"])
 def get_data():
